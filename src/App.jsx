@@ -40,12 +40,21 @@ const App = () => {
                     className="col-12"
                     key={`actor-${actor.id}`}
                   >
-                    <div className="card d-flex">
-                      <div className="act-image">
+                    <div className="card">
+                      <div className="card-header">
                         <img
                           src={actor.image}
                           alt={`actor ${actor.name}`}
+                          className='card-img-top'
                         />
+                      </div>
+                      <div className="card-body">
+                        <h5 className="card-title">{actor.name}</h5>
+                        <p className="card-text">{actor.birth_year} - {actor.nationality}</p>
+                        <p className="card-text">{actor.biography}</p>
+                        <p className="card-text">
+                          <em>{actor.awards.join(", ")}</em>
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -61,12 +70,22 @@ const App = () => {
                     className="col-12"
                     key={`actress-${actress.id}`}
                   >
-                    <div className="card d-flex">
-                      <div className="act-image">
+                    <div className="card">
+                      <div className="card-header">
                         <img
                           src={actress.image}
                           alt={`actress ${actress.name}`}
+                          className='card-img-top'
                         />
+                      </div>
+                      <div className="card-body">
+                        <h5 className="card-title">{actress.name}</h5>
+                        <p className="card-text">{actress.birth_year} - {actress.nationality}</p>
+                        <p className="card-text">{actress.biography}</p>
+                        <p className="card-text">
+                          <em>{actress.awards}</em>
+
+                        </p>
                       </div>
                     </div>
                   </div>
