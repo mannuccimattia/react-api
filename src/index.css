@@ -1,3 +1,25 @@
+body {
+  background-color: #222;
+  color: #fff;
+}
+
+h3 {
+  margin: 20px 0 40px 0;
+}
+
+.card-container {
+  height: 80vh;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #444;
+  padding: 10px;
+}
+
+.card {
+  background-color: #444;
+  color: #fff;
+}
+
 .card-header {
   aspect-ratio: 1/1;
   overflow: hidden;
@@ -7,6 +29,28 @@
   width: 100%;
 }
 
+.cast img {
+  height: 100%;
+  width: auto;
+}
+
+.cast .card-header {
+  width: 51%;
+  margin: 0;
+  padding: 0;
+}
+
 .card {
   height: 700px;
+}
+
+.card.cast {
+  height: 300px;
+}
+
+.scroll-container {
+  scrollbar-width: thin;
+  /* "auto", "thin", or "none" */
+  scrollbar-color: #888 #f0f0f0;
+  /* thumb color, track color */
 }

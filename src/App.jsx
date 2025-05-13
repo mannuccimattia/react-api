@@ -31,9 +31,9 @@ const App = () => {
 
         <main>
           <div className="row justify-content-center">
-            <div className="col-12 col-md-6 text-center">
+            <div className="col-12 col-md-4 text-center">
               <h3>Attori</h3>
-              <div className="row g-3">
+              <div className="row g-3  card-container">
                 {actors.map(actor => (
                   <div
                     className="col-12"
@@ -61,9 +61,9 @@ const App = () => {
               </div>
             </div>
 
-            <div className="col-12 col-md-6 text-center">
+            <div className="col-12 col-md-4 text-center">
               <h3>Attrici</h3>
-              <div className="row g-3">
+              <div className="row g-3 card-container">
                 {actresses.map(actress => (
                   <div
                     className="col-12"
@@ -91,33 +91,38 @@ const App = () => {
               </div>
             </div>
 
-            <div className="row g-3">
-              {sortedCast.map(pers => (
-                <div
-                  className="col-12"
-                  key={`pers-${pers.id}`}
-                >
-                  <div className="card">
-                    <div className="card-header">
-                      <img
-                        src={pers.image}
-                        alt={`pers ${pers.name}`}
-                        className='card-img-top'
-                      />
-                    </div>
-                    <div className="card-body">
-                      <h5 className="card-title">{pers.name}</h5>
-                      <p className="card-text">{pers.birth_year} - {pers.nationality}</p>
-                      <p className="card-text">{pers.biography}</p>
-                      <p className="card-text">
-                        <em>{pers.awards}</em>
-                      </p>
+            <div className="col-12 col-md-8 text-center">
+              <h3>Cast Completo</h3>
+              <div className="row g-3 card-container">
+                {sortedCast.map(pers => (
+                  <div
+                    className="col-12"
+                    key={pers.name.toString()}
+                  >
+                    <div className="card cast d-flex flex-row">
+                      <div className="card-header">
+                        <img
+                          src={pers.image}
+                          alt={`pers ${pers.name}`}
+                          className='card-img-top'
+                        />
+                      </div>
+                      <div className="card-body">
+                        <h5 className="card-title">{pers.name}</h5>
+                        <p className="card-text">{pers.birth_year} - {pers.nationality}</p>
+                        <p className="card-text">{pers.biography}</p>
+                        <p className="card-text">
+                          <em>{pers.awards}</em>
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
+          </div >
+
+
         </main>
       </div>
     </>
