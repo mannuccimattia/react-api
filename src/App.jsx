@@ -7,6 +7,8 @@ const App = () => {
   const [actors, setActors] = useState([]);
   const [actresses, setActresses] = useState([]);
 
+  const sortedCast = [...actors, ...actresses].sort((a, b) => a.name.localeCompare(b.name))
+
   const fetchActors = () => {
     axios.get("https://lanciweb.github.io/demo/api/actors/").then(res => setActors(res.data)).catch(error => console.error("Errore di caricamento Attori ", error));
   }
@@ -17,9 +19,6 @@ const App = () => {
 
   useEffect(() => {
     fetchActors();
-  }, [])
-
-  useEffect(() => {
     fetchActresses();
   }, [])
 
@@ -84,13 +83,39 @@ const App = () => {
                         <p className="card-text">{actress.biography}</p>
                         <p className="card-text">
                           <em>{actress.awards}</em>
-
                         </p>
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
+            </div>
+
+            <div className="row g-3">
+              {sortedCast.map(pers => (
+                <div
+                  className="col-12"
+                  key={`pers-${pers.id}`}
+                >
+                  <div className="card">
+                    <div className="card-header">
+                      <img
+                        src={pers.image}
+                        alt={`pers ${pers.name}`}
+                        className='card-img-top'
+                      />
+                    </div>
+                    <div className="card-body">
+                      <h5 className="card-title">{pers.name}</h5>
+                      <p className="card-text">{pers.birth_year} - {pers.nationality}</p>
+                      <p className="card-text">{pers.biography}</p>
+                      <p className="card-text">
+                        <em>{pers.awards}</em>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </main>
