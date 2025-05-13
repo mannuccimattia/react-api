@@ -1,3 +1,4 @@
+/* Commons */
 body {
   background-color: #222;
   color: #fff;
@@ -15,6 +16,7 @@ h3 {
   width: 60%;
 }
 
+/*  card  */
 .card-container {
   height: 80vh;
   overflow-y: scroll;
@@ -37,11 +39,6 @@ h3 {
   width: 100%;
 }
 
-.cast img {
-  height: 100%;
-  width: auto;
-}
-
 .card {
   height: 700px;
 }
@@ -50,6 +47,12 @@ h3 {
   height: 300px;
 }
 
+.cast img {
+  height: 100%;
+  width: auto;
+}
+
+/* scrollbars */
 .scroll-container {
   scrollbar-width: thin;
   scrollbar-color: #888 #f0f0f0;

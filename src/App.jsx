@@ -9,6 +9,7 @@ const App = () => {
 
   const sortedCast = [...actors, ...actresses].sort((a, b) => a.name.localeCompare(b.name))
 
+  // functions
   const fetchActors = () => {
     axios.get("https://lanciweb.github.io/demo/api/actors/").then(res => setActors(res.data)).catch(error => console.error("Errore di caricamento Attori ", error));
   }
@@ -17,6 +18,7 @@ const App = () => {
     axios.get("https://lanciweb.github.io/demo/api/actresses/").then(res => setActresses(res.data)).catch(error => console.error("Errore di caricamento Attori ", error));
   }
 
+  // effect
   useEffect(() => {
     fetchActors();
     fetchActresses();
@@ -122,8 +124,8 @@ const App = () => {
             </div>
           </div >
 
-
         </main>
+
       </div>
     </>
   )
