@@ -100,14 +100,14 @@ const App = () => {
                     key={pers.name.toString()}
                   >
                     <div className="card cast d-flex flex-row">
-                      <div className="card-header">
+                      <div className="card-header w-40">
                         <img
                           src={pers.image}
                           alt={`pers ${pers.name}`}
                           className='card-img-top'
                         />
                       </div>
-                      <div className="card-body">
+                      <div className="card-body w-60">
                         <h5 className="card-title">{pers.name}</h5>
                         <p className="card-text">{pers.birth_year} - {pers.nationality}</p>
                         <p className="card-text">{pers.biography}</p>

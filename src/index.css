@@ -7,6 +7,14 @@ h3 {
   margin: 20px 0 40px 0;
 }
 
+.w-40 {
+  width: 40%;
+}
+
+.w-60 {
+  width: 60%;
+}
+
 .card-container {
   height: 80vh;
   overflow-y: scroll;
@@ -34,12 +42,6 @@ h3 {
   width: auto;
 }
 
-.cast .card-header {
-  width: 51%;
-  margin: 0;
-  padding: 0;
-}
-
 .card {
   height: 700px;
 }
@@ -50,7 +52,5 @@ h3 {
 
 .scroll-container {
   scrollbar-width: thin;
-  /* "auto", "thin", or "none" */
   scrollbar-color: #888 #f0f0f0;
-  /* thumb color, track color */
 }
